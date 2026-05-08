@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perdi & Achei | Central de achados e perdidos</title>
+</head>
+<body>
+    <header class = "hero" id="inicio"> <!--links-->
+        <nav class="nav">
+            <a class="marca" href="#inicio">
+                <img src="assets/logo-perdi-achei.svg" alt=""
+                class="marca-img" />
+            </a>
+            <div class="nav-links" aria-label="Navegação Principal">
+                <a href="#cadastro">Cadastrar</a>
+                <a href="#registros">Registros</a>
+            </div>
+            <section class="hero-conteudo">
+               <div class="herotexto">
+                <h1>Perdeu? Achou? Registre Aqui</h1>
+                <p>Uma Central simples para cadastrar objetos perdidos ou encontrados na Unipar.</p>
+               <div class="acao">
+                <!--class = btn btn - principal encapsulamento de classes-->
+                <a href="#cadastro" class="btn btn-principal">
+                    Cadastrar Objeto
+                </a>
+                <a href="#registros" class="btn btn-secundario">
+                    Ver Registros
+                </a>
+               </div>
+            </div>
+            <!--barra lateral do site-->
+            <aside class="hero-card" aria-label="Resumo do Sistema">
+                <img src="assets/hero-achados-perdidos.svg" alt="Ilustração de Objetos">
+                <div class="hero-metricas">
+                    <!--lembrança para o futuro: o js vai atualizar isso-->
+                    <div>
+                    <strong id="totalRegistros">0</strong>
+                    <span>Registros</span>
+                    </div>
+                </div>
+            </aside>
+            </section>
+        </nav>
+    </header>
+    <main class="container">
+        <section class="grid-principal">
+            <!--article: artigo, "foco do site"-->
+            <article class="card" id="cadastro">
+                <div class="card-cabechalho">
+                    <img src="assets/formulario.svg" alt=""/>
+                    <div>
+                        <h2>Cadastar Objeto</h2>
+                        <p>Informe os dados do objeto</p>
+                    </div>
+                </div>
+                <!--auto complete = off, nao sugere4 campos-->
+                <form id="formObjeto" auto complete = "off">
+                    <label>Nome do Objeto</label>
+                    <input type="text" name="objeto" maxlength="80" placeholder="Ex.:Mochila, chave, carteira" required/>
+                    <!--vou criar uma div para dividir em colunas-->
+                    <div class="coluna-dois">
+                        <label>tipo</label>
+                    <!--campo de seleção-->
+                    <select name="tipo" required>
+                        <option value="">Selecione</option>
+                        <option value="perdido">Perdido</option>
+                        <option value="encontrado">Encontrado</option>
+                    </select>
+                    <label>Data</label>
+                        <input type="date" name="data" required />
+                    </div>
+                    <label>Local</label>
+                    <input type="text" name="local" maxlength="100" placeholder="Ex.: Laboratorio 2, biblioteca, patio" required />
+                    <label>Descrição</label>
+                    <!-- <textarea> Permite texto longo e linhas-->
+                    <textarea name="Descrição" maxlength="360" placeholder="Descreva cor, marca, detalhes... "></textarea>
+                    <label>Contato</label>
+                    <input type="text" name="Contato" maxlength="100" placeholder="E-mail, Whatsapp..." required/>
+                    
+                    <button type="submit" class="btn btn-form">Salvar</button>
+                </form>
+            </article>
+        </section>
+    </main>
+</body>
+</html>
